@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con HTML</title>
+</head>
+<body>
+
+<h2>Formulario de Información</h2>
+
+<form class="formulario" action="#" method="post">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="apellidos">Apellidos:</label><br>
+    <input type="text" id="apellidos" name="apellidos" required><br>
+
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+
+    <label for="contrasena">Contraseña:</label><br>
+    <input type="password" id="contrasena" name="contrasena" required><br>
+
+    <label for="genero">Género:</label><br>
+    <select id="genero" name="genero" required>
+        <option value="">Seleccione una opción</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+    </select><br>
+
+    <label for="opiniones">Opiniones:</label><br>
+    <textarea id="opiniones" name="opiniones" rows="4" cols="50"></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<div id="infoUsuario">
+    <!-- Aquí se mostrará la información ingresada por el usuario después de enviar el formulario -->
+</div>
+
+<script>
+    document.querySelector('.formulario').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe
+
+        // Obtener los valores de los campos de entrada
+        var nombre = document.getElementById('nombre').value;
+        var apellidos = document.getElementById('apellidos').value;
+        var email = document.getElementById('email').value;
+        var fechaNacimiento = document.getElementById('fecha_nacimiento').value;
+        var contrasena = document.getElementById('contrasena').value;
+        var genero = document.getElementById('genero').value;
+        var opiniones = document.getElementById('opiniones').value;
+
+        // Construir el mensaje con la información del usuario
+        var mensaje = 'Nombre: ' + nombre + '<br>';
+        mensaje += 'Apellidos: ' + apellidos + '<br>';
+        mensaje += 'Correo electrónico: ' + email + '<br>';
+        mensaje += 'Fecha de nacimiento: ' + fechaNacimiento + '<br>';
+        mensaje += 'Contraseña: ' + contrasena + '<br>';
+        mensaje += 'Género: ' + genero + '<br>';
+        mensaje += 'Opiniones: ' + opiniones;
+
+        // Mostrar el mensaje en el área designada
+        document.getElementById('infoUsuario').innerHTML = mensaje;
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
